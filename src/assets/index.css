@@ -62,6 +62,13 @@
   font-style: italic;
 }
 
+.dont-select {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .bg-height {
   height: 100%;
 }
@@ -72,7 +79,8 @@
 
 @media only screen and (max-height: 850px) {
   .menu-height {
-    position: sticky
+    position: sticky;
+    top: 0;
   }
   .bg-height {
     height: auto;

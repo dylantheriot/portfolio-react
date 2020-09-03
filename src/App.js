@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './assets/index.css';
 import HomePage from './components/home_page/HomePage';
-import Menu from './components/menu/Menu';
+import AboutPage from './components/about_page/AboutPage';
+import { HashRouter, Route, Switch } from "react-router-dom";
 
-function App() {
+function App(props) {
   return (
     <>
-    <div className="relative bg-pastelBlue-100 min-h-full w-full bg-height">
-      <Menu />
-      <div className="relative h-full font-avenir">
-        <HomePage />
-      </div>
-    </div>
+      <HashRouter>
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+          <Route exact path='/about' component={AboutPage} />
+        </Switch>
+      </HashRouter>
     </>
   );
 }
