@@ -62,6 +62,18 @@
   font-style: italic;
 }
 
+html, body {
+  height: 100%;
+}
+
+/* .modified-h-screen {
+  min-height: calc(100vh - 20px);
+}  */
+
+#root {
+  height: 100%;
+}
+
 html::after {
   right: 0;
 }
@@ -82,6 +94,10 @@ html::after, html::before {
   z-index: 21000;
 }
 
+body {
+  padding: 20px;
+}
+
 body::before {
   top: 0;
 }
@@ -90,9 +106,12 @@ body::after {
   bottom: 0;
 }
 
-body {
-  background-color: blue;
-}
+/* body {
+  https://www.colorhexa.com/2a4d69
+  background-image: radial-gradient( circle farthest-corner at 12.3% 19.3%,  rgba(85,88,218,1) 0%, rgba(95,209,249,1) 100.2% );
+  background-color: #eaf1f7;
+  color: #1f384d;
+} */
 
 body::after, body::before {
   content: "";

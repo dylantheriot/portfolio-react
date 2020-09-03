@@ -1,12 +1,13 @@
 import React from 'react';
 import './assets/index.css';
+import HomePage from './components/home_page/HomePage';
 
 function App() {
   return (
-    <div className="p-8 h-screen bg-blue-600">
-    <h1 className="text-6xl font-avenir">
-      Hello Internet
-    </h1>
+    <div className="bg-pastelBlue-100 h-full">
+      <div className="h-full font-avenir">
+        <HomePage />
+      </div>
     </div>
   );
 }
