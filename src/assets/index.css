@@ -62,14 +62,33 @@
   font-style: italic;
 }
 
-html, body {
-  min-height: 100vh;
+.bg-height {
   height: 100%;
 }
 
-/* .modified-h-screen {
-  min-height: calc(100vh - 20px);
-}  */
+.menu-height {
+  position: fixed;
+}
+
+@media only screen and (max-height: 850px) {
+  .menu-height {
+    position: sticky
+  }
+  .bg-height {
+    height: auto;
+  }
+} 
+
+html, body {
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  min-width: 100vw;
+}
+
+.modified-w-screen {
+  min-width: calc(100vw - 40px);
+} 
 
 #root {
   height: 100%;
