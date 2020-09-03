@@ -4,7 +4,7 @@ import HomePage from './components/home_page/HomePage';
 
 function App() {
   return (
-    <div className="bg-pastelBlue-100 h-full">
+    <div className="bg-pastelBlue-100 min-h-full lg:h-full">
       <div className="h-full font-avenir">
         <HomePage />
       </div>
