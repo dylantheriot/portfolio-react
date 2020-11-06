@@ -2,3 +2,19 @@
   top: 10px;
   left: 60px;
 }
+
+.home-height {
+  min-height: 100vh;
+}
+
+@media only screen and (min-width: 768px) {
+  .home-height {
+    min-height: calc(100vh - 90px);
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .home-height {
+    min-height: calc(100vh - 40px);
+  }
+}

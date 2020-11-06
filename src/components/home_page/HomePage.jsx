@@ -36,7 +36,7 @@ function HomePageContent() {
 
 
   return (
-    <div id="home-page" className="overflow-hidden p-2 text-pastelBlue-700 max-w-screen m-auto md:flex md:flex-col md:justify-center" style={{ minHeight: "calc(100vh - 40px)" }}>
+    <div id="home-page" className="home-height overflow-hidden p-2 text-pastelBlue-700 max-w-screen m-auto md:flex md:flex-col md:justify-center">
       <div className="text-center md:text-left h-full" >
         <div className="flex flex-col justify-around h-full" >
           <div className="flex flex-col flex-end lg:flex-row-reverse md:w-10/12 m-auto">
@@ -110,10 +110,15 @@ function HomePageContent() {
               </div>
             </div>
           </div>
-          <animated.div className="flex flex-row justify-center" style={textSpring}>
+          <animated.div className="flex flex-col md:flex-row justify-center" style={textSpring}>
             <Link to="/about">
-              <button className="bg-pastelBlue-500 hover:bg-pastelBlue-700 text-white font-bold py-2 px-4 rounded" style={{ height: 50, marginTop: 10, marginBottom: 30 }}>
+              <button className="bg-pastelBlue-500 hover:bg-pastelBlue-700 text-white font-bold py-2 px-4 rounded my-2 md:my-4 lg:my-2 md:mx-2" style={{ height: 50, width: 230 }}>
                 LEARN MORE ABOUT ME
+              </button>
+            </Link>
+            <Link to="/portfolio">
+              <button className="bg-pastelBlue-500 hover:bg-pastelBlue-700 text-white font-bold py-2 px-4 rounded mb-4 md:my-4 lg:my-2 md:mx-2" style={{ height: 50, width: 230 }}>
+                VIEW MY PROJECTS
               </button>
             </Link>
           </animated.div>
