@@ -1,5 +1,20 @@
 const projects = [
   {
+    'date': 'November 2020',
+    'title': 'Magpie',
+    'hackathon': "Twitter's Codechella 2020",
+    'awards': 'Awards: 1st Place, Invite to Chat with CEO Jack Dorsey',
+    'description': 'Magpie is a simple, yet effective Google Chrome extension which allows Twitter users to easily get informed and get access to resources, such as news articles, related to tweets they engage with.',
+    'hasLink1': true,
+    'link1': 'https://devpost.com/software/magpie-mylz6q',
+    'link1Title': 'Devpost',
+    'hasLink2': true,
+    'link2': 'https://www.youtube.com/watch?v=9fA8w2Ap0Q0',
+    'link2Title': 'YouTube',
+    'hasDivider' : true,
+    'image': 'magpie.png',
+  },
+  {
     'date': 'September 2020',
     'title': 'DoubleCheck',
     'hackathon': 'ShellHacks 2020',
