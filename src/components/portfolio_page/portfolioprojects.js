@@ -1,5 +1,20 @@
 const projects = [
   {
+    'date': 'October 2021',
+    'title': 'convo',
+    'hackathon': "HackDFW 2021",
+    'awards': 'Awards: Third Place',
+    'description': 'convo is a simple approach to solving this problem using low cost modern-day solutions to allow for two main demographics of people to easily and effectively read books and accomplish additional educative tasks.',
+    'hasLink1': true,
+    'link1': 'https://devpost.com/software/convo-2407nm',
+    'link1Title': 'Devpost',
+    'hasLink2': false,
+    'link2': '',
+    'link2Title': '',
+    'hasDivider' : true,
+    'image': 'convo.jpeg',
+  },
+  {
     'date': 'November 2020',
     'title': 'Magpie',
     'hackathon': "Twitter's Codechella 2020",

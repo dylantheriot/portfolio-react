@@ -58,7 +58,7 @@ function HomePageContent() {
                 </animated.h1>
                 <animated.div className="w-20 md:w-32 h-2 bg-pastelBlue-500 mt-2 md:mt-8 mb-2 m-auto md:ml-0 md:mr-auto" style={barSpring}></animated.div>
                 <animated.div className="text-lg md:text-2xl" style={textSpring}>
-                  <p>My name is <strong className="text-xl md:text-3xl">Dylan Theriot</strong>, and I'm a junior Computer Science student at Texas A&M University.</p>
+                  <p>My name is <strong className="text-xl md:text-3xl">Dylan Theriot</strong>, and I'm an incoming UI Engineer at <a href="https://netflix.com" target='_blank'><strong style={{color: '#E50914'}}>Netflix</strong></a>.</p>
                   {/* <p>I am currently looking for a <strong className="text-xl md:text-3xl">Summer and/or Fall 2021 internship</strong>.</p> */}
                   <p>
                     Email: <strong><a className="hover:underline text-pastelBlue-500" href="mailto:dylantheriot@tamu.edu">dylantheriot@tamu.edu</a></strong>
