@@ -1,3 +1,29 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
+
+@theme {
+  --font-avenir: "AvenirNext";
+
+  /* Dark theme */
+  --color-bg: #0A0A0B;
+  --color-surface: #141416;
+  --color-border: #2A2A2E;
+
+  --color-text: #F5F5F7;
+  --color-secondary: #8E8E93;
+  --color-tertiary: #636366;
+
+  /* shadcn-compatible aliases */
+  --color-background: #0A0A0B;
+  --color-foreground: #F5F5F7;
+  --color-muted: #141416;
+  --color-muted-foreground: #8E8E93;
+
+  /* Accent */
+  --color-indigo: #2563EB;
+  --color-pink: #EC4899;
+  --color-amber: #F59E0B;
+
+  /* Brand */
+  --color-netflix: #E50914;
+  --color-lootlabs: #10B981;
+}
