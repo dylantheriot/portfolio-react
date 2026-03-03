@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
 import { useSpring, animated } from '@react-spring/web';
+import SweepLink from './SweepLink';
 
 export default function ExpandableGroup({ title, count, children, defaultOpen = false }) {
   const [open, setOpen] = useState(defaultOpen);
+  const [hovered, setHovered] = useState(false);
   const contentRef = useRef(null);
   const [contentHeight, setContentHeight] = useState(0);
 
@@ -22,12 +24,14 @@ export default function ExpandableGroup({ title, count, children, defaultOpen = 
     <div className="border-b border-border">
       <button
         onClick={() => setOpen(!open)}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
         className="w-full flex items-center justify-between py-5 px-1 text-left cursor-pointer group"
       >
         <div className="flex items-center gap-3">
-          <h3 className="text-lg md:text-xl font-bold text-text group-hover:text-indigo transition-colors">
+          <SweepLink as="h3" hovered={hovered} className="text-lg md:text-xl font-bold text-text">
             {title}
-          </h3>
+          </SweepLink>
           <span className="text-tertiary text-sm">({count})</span>
         </div>
         <svg

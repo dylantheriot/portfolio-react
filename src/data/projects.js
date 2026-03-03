@@ -1,10 +1,31 @@
 const projects = [
   {
+    date: '2024',
+    title: 'Netflix Internal Hackathon',
+    hackathon: 'Netflix',
+    award: 'Winner',
+    links: [],
+  },
+  {
+    date: '2023',
+    title: 'Netflix Internal Hackathon',
+    hackathon: 'Netflix',
+    award: 'Winner',
+    links: [],
+  },
+  {
     date: 'Oct 2021',
     title: 'convo',
     hackathon: 'HackDFW 2021',
     award: 'Third Place',
     links: [{ label: 'Devpost', url: 'https://devpost.com/software/convo-2407nm' }],
+  },
+  {
+    date: 'Dec 2020',
+    title: 'VALORANT ELO TRACKER',
+    hackathon: '',
+    award: '50,000+ Users',
+    links: [{ label: 'GitHub', url: 'https://github.com/dylantheriot/valorant-match-history' }],
   },
   {
     date: 'Nov 2020',

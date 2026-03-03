@@ -2,6 +2,7 @@ import { useState } from 'react';
 import experience from '../../data/experience';
 import { PopInLeft } from '../shared/ScrollAnimation';
 import { GlowingEffect } from '../ui/glowing-effect';
+import SweepLink from '../ui/SweepLink';
 
 const companyImages = import.meta.glob('../../assets/images/companies/*.{png,jpg,jpeg,svg,webp}', { eager: true });
 
@@ -36,14 +37,11 @@ function CompanyIcon({ company, image, color }) {
 
 function TimelineEntry({ entry }) {
   const [hovered, setHovered] = useState(false);
-  const Wrapper = entry.url ? 'a' : 'div';
-  const linkProps = entry.url ? { href: entry.url, target: '_blank', rel: 'noopener noreferrer' } : {};
 
   return (
     <PopInLeft threshold={0.15}>
-      <Wrapper
-        {...linkProps}
-        className="relative rounded-xl p-4 block cursor-pointer"
+      <div
+        className="relative rounded-xl p-4 block"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
@@ -57,38 +55,20 @@ function TimelineEntry({ entry }) {
           {/* Content */}
           <div className="flex-1 min-w-0 pb-2">
             <p className="text-tertiary text-xs uppercase tracking-wider">{entry.date}</p>
-            <h3
-              className="font-bold text-lg leading-tight"
-              style={{
-                backgroundImage: 'linear-gradient(to right, #2563EB 50%, #F5F5F7 50%)',
-                backgroundSize: '200% 100%',
-                backgroundPosition: hovered ? '0% center' : '100% center',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                transition: hovered ? 'background-position 1s ease-out' : 'background-position 0.3s ease-in',
-              }}
-            >
-              {entry.company}
-              {entry.url && (
-                <svg
-                  className="w-3.5 h-3.5 inline-block ml-1.5 mb-0.5"
-                  style={{
-                    opacity: hovered ? 1 : (typeof window !== 'undefined' && window.innerWidth < 768 ? 1 : 0),
-                    transition: 'opacity 0.3s',
-                  }}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="#2563EB"
-                  strokeWidth={2}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
-                </svg>
-              )}
-            </h3>
+            {entry.url ? (
+              <SweepLink
+                href={entry.url}
+                className="font-bold text-lg leading-tight text-text"
+              >
+                {entry.company} <span className="text-xs">↗</span>
+              </SweepLink>
+            ) : (
+              <h3 className="font-bold text-lg leading-tight text-text">{entry.company}</h3>
+            )}
             <p className="text-secondary text-sm">{entry.role}</p>
           </div>
         </div>
-      </Wrapper>
+      </div>
     </PopInLeft>
   );
 }
@@ -100,8 +80,8 @@ export default function ExperienceSpotlight() {
   return (
     <section className="py-24 px-6">
       <div className="max-w-3xl mx-auto">
-        {/* Professional */}
-        <p className="text-xs uppercase tracking-[0.3em] text-tertiary mb-8">Professional</p>
+        {/* Experience */}
+        <p className="text-xs uppercase tracking-[0.3em] text-tertiary mb-8">Experience</p>
         <div className="relative">
           {/* Continuous timeline line */}
           <div className="absolute left-[36px] md:left-[40px] top-0 bottom-0 w-px bg-border" />
@@ -116,7 +96,6 @@ export default function ExperienceSpotlight() {
         <div className="border-t border-border my-10" />
 
         {/* Earlier */}
-        <p className="text-xs uppercase tracking-[0.3em] text-tertiary mb-8">Earlier</p>
         <div className="relative">
           {/* Continuous timeline line */}
           <div className="absolute left-[36px] md:left-[40px] top-0 bottom-0 w-px bg-border" />

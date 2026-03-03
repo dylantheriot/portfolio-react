@@ -39,7 +39,7 @@ const presets = {
   },
 };
 
-function ScrollAnimation({ preset, threshold = 0.5, once = true, delay = 0, children }) {
+function ScrollAnimation({ preset, threshold = 0.5, once = true, delay = 0, className, children }) {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -73,7 +73,7 @@ function ScrollAnimation({ preset, threshold = 0.5, once = true, delay = 0, chil
   });
 
   return (
-    <animated.div ref={ref} style={spring}>
+    <animated.div ref={ref} style={spring} className={className}>
       {children}
     </animated.div>
   );
@@ -87,8 +87,8 @@ export function BounceInRight({ threshold, once, children }) {
   return <ScrollAnimation preset="bounceInRight" threshold={threshold} once={once}>{children}</ScrollAnimation>;
 }
 
-export function PopIn({ threshold, once, delay, children }) {
-  return <ScrollAnimation preset="popIn" threshold={threshold} once={once} delay={delay}>{children}</ScrollAnimation>;
+export function PopIn({ threshold, once, delay, className, children }) {
+  return <ScrollAnimation preset="popIn" threshold={threshold} once={once} delay={delay} className={className}>{children}</ScrollAnimation>;
 }
 
 export function FadeInLeft({ threshold, once, children }) {

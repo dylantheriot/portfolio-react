@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSpring, useChain, useSpringRef, animated } from '@react-spring/web';
 import pfp from '../../assets/images/theriot_pfp.png';
-import Resume from '../../assets/Theriot_Official_Resume.pdf';
 import { GlowingEffect } from '../ui/glowing-effect';
 import { WavyBackground } from '../ui/wavy-background';
 import SocialLinks from '../ui/SocialLinks';
@@ -117,7 +116,7 @@ export default function Hero() {
           <span className="relative rounded-full">
             <GlowingEffect spread={40} glow disabled={false} proximity={64} inactiveZone={0.01} borderWidth={2} />
             <a
-              href={Resume}
+              href="/resume"
               target="_blank"
               rel="noopener noreferrer"
               className="relative block px-5 py-2 rounded-full border border-border text-sm text-secondary hover:text-text hover:border-indigo transition-all"

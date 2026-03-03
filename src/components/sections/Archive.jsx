@@ -1,36 +1,12 @@
-import { useState } from 'react';
 import ExpandableGroup from '../ui/ExpandableGroup';
+import SweepLink from '../ui/SweepLink';
 import projects from '../../data/projects';
 import leadership from '../../data/leadership';
 import { PopIn } from '../shared/ScrollAnimation';
 
-function SweepLink({ href, children, className = '' }) {
-  const [hovered, setHovered] = useState(false);
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`inline-block ${className}`}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      style={{
-        backgroundImage: 'linear-gradient(to right, #2563EB 50%, currentColor 50%)',
-        backgroundSize: '200% 100%',
-        backgroundPosition: hovered ? '0% center' : '100% center',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        transition: hovered ? 'background-position 1s ease-out' : 'background-position 0.3s ease-in',
-      }}
-    >
-      {children}
-    </a>
-  );
-}
-
 function ProjectHeader() {
   return (
-    <div className="grid grid-cols-[4.5rem_1fr_auto] md:grid-cols-[5rem_1fr_1fr_10rem_6rem] gap-2 md:gap-4 items-center py-2 px-1 border-b border-border text-xs uppercase tracking-wider text-tertiary">
+    <div className="grid grid-cols-[4.5rem_1fr_auto] md:grid-cols-[5rem_1fr_1fr_10rem_10rem] gap-2 md:gap-4 items-center py-2 px-1 border-b border-border text-xs uppercase tracking-wider text-tertiary">
       <span>Year</span>
       <span>Project</span>
       <span className="hidden md:block">Event</span>
@@ -42,7 +18,7 @@ function ProjectHeader() {
 
 function ProjectRow({ project }) {
   return (
-    <div className="grid grid-cols-[4.5rem_1fr_auto] md:grid-cols-[5rem_1fr_1fr_10rem_6rem] gap-2 md:gap-4 items-center py-3 px-1 border-b border-border/30 last:border-0 text-sm">
+    <div className="grid grid-cols-[4.5rem_1fr_auto] md:grid-cols-[5rem_1fr_1fr_10rem_10rem] gap-2 md:gap-4 items-center py-3 px-1 border-b border-border/30 last:border-0 text-sm">
       <span className="text-tertiary text-xs">{project.date}</span>
       <span className="text-text font-medium truncate">{project.title}</span>
       <span className="text-secondary text-xs hidden md:block truncate">{project.hackathon || '—'}</span>
@@ -58,14 +34,14 @@ function ProjectRow({ project }) {
       ) : (
         <span className="hidden md:block text-tertiary/40 text-xs">—</span>
       )}
-      <div className="flex gap-2 justify-end">
+      <div className="flex gap-2 justify-end whitespace-nowrap">
         {project.links.map((link) => (
           <SweepLink
             key={link.url}
             href={link.url}
             className="text-tertiary text-xs underline underline-offset-2"
           >
-            {link.label}
+            {link.label} ↗
           </SweepLink>
         ))}
       </div>
@@ -73,11 +49,31 @@ function ProjectRow({ project }) {
   );
 }
 
+function LeadershipHeader() {
+  return (
+    <div className="grid grid-cols-[5rem_1fr_4rem] md:grid-cols-[5rem_1fr_1fr_4rem] gap-2 md:gap-4 items-center py-2 px-1 border-b border-border text-xs uppercase tracking-wider text-tertiary">
+      <span>Date</span>
+      <span>Organization</span>
+      <span className="hidden md:block">Role</span>
+      <span className="text-right">Link</span>
+    </div>
+  );
+}
+
 function LeadershipRow({ item }) {
   return (
-    <div className="grid grid-cols-2 gap-4 items-center py-2.5 px-1 border-b border-border/50 last:border-0 text-sm">
-      <span className="text-text font-bold">{item.org}</span>
-      <span className="text-secondary text-xs">{item.role}</span>
+    <div className="grid grid-cols-[5rem_1fr_4rem] md:grid-cols-[5rem_1fr_1fr_4rem] gap-2 md:gap-4 items-center py-3 px-1 border-b border-border/30 last:border-0 text-sm">
+      <span className="text-tertiary text-xs">{item.date}</span>
+      <span className="text-text font-medium truncate">{item.org}</span>
+      <span className="text-secondary text-xs hidden md:block truncate">{item.role}</span>
+      <div className="flex justify-end">
+        <SweepLink
+          href={item.link}
+          className="text-tertiary text-xs underline underline-offset-2"
+        >
+          Visit ↗
+        </SweepLink>
+      </div>
     </div>
   );
 }
@@ -87,7 +83,7 @@ export default function Archive() {
     <section className="py-24 px-6">
       <div className="max-w-4xl mx-auto">
         <PopIn threshold={0.1}>
-          <h2 className="text-xs uppercase tracking-[0.3em] text-tertiary mb-8">Side Projects & Leadership</h2>
+          <h2 className="text-xs uppercase tracking-[0.3em] text-tertiary mb-8">Projects & Leadership</h2>
 
           <ExpandableGroup title="Projects" count={projects.length}>
             <ProjectHeader />
@@ -97,6 +93,7 @@ export default function Archive() {
           </ExpandableGroup>
 
           <ExpandableGroup title="Leadership" count={leadership.length}>
+            <LeadershipHeader />
             {leadership.map((l, i) => (
               <LeadershipRow key={i} item={l} />
             ))}

@@ -1,11 +1,11 @@
 const about = {
   location: 'San Francisco, CA',
   interests: [
-    { label: 'Gaming', emoji: '🎮' },
     { label: 'Tennis', emoji: '🎾' },
     { label: 'Music', emoji: '🎵' },
+    { label: 'Gaming', emoji: '🎮' },
   ],
-  currently: 'Update me...', // e.g. "playing Elden Ring DLC"
+  currently: 'Programming tools to improve my productivity...', // e.g. "playing Elden Ring DLC"
 };
 
 export default about;

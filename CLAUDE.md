@@ -19,12 +19,12 @@ Single-page scrolling portfolio site for dylantheriot.com. Vite + React 19 + Tai
 **Entry flow:** `index.html` → `src/index.jsx` (createRoot) → `App.jsx` (renders all sections top-to-bottom)
 
 **Section render order in App.jsx:**
-`NoiseOverlay` → `GradientOrbs` → `Hero` → `ExperienceSpotlight` → `Stats` → `TechStack` → `Education` → `About` → `Archive` → `Footer`
+`NoiseOverlay` → `GradientOrbs` → `Hero` → `ExperienceSpotlight` → `TechStack` → `Education` → `About` → `Archive` → `Footer`
 
 ### Key directories
 
 - `src/components/sections/` — full-page sections composing the site
-- `src/components/ui/` — reusable primitives (AnimatedCounter, ExpandableGroup, GradientOrbs, NoiseOverlay)
+- `src/components/ui/` — reusable primitives (ExpandableGroup, GradientOrbs, NoiseOverlay)
 - `src/components/shared/` — scroll animation wrappers (ScrollAnimation.jsx is the active system)
 - `src/data/` — static JS data files (experience.js, projects.js, about.js, leadership.js). Edit these to update site content.
 
