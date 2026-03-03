@@ -64,7 +64,7 @@ export default function Hero() {
   useChain([pfpRef, nameRef, lineRef, titleRef, subtitleRef, linksRef], [0, 0.15, 0.3, 0.45, 0.6, 0.75]);
 
   return (
-    <section className="relative flex flex-col min-h-dvh gap-5">
+    <section className="relative flex flex-col min-h-svh gap-5">
       <WavyBackground
         colors={waveColors}
         backgroundFill="#0A0A0B"
