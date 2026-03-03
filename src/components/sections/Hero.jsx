@@ -86,7 +86,7 @@ export default function Hero() {
 
         <animated.h1
           className="gradient-text font-bold tracking-tight leading-none"
-          style={{ ...nameSpring, fontSize: 'clamp(3rem, 8vw, 7rem)', letterSpacing: '-0.03em' }}
+          style={{ ...nameSpring, fontSize: 'clamp(2rem, 8vw, 7rem)', letterSpacing: '-0.03em' }}
         >
           DYLAN THERIOT
         </animated.h1>
@@ -129,7 +129,7 @@ export default function Hero() {
       </WavyBackground>
 
       <button
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 bounce-chevron cursor-pointer bg-transparent border-none p-2 z-10"
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 bounce-chevron cursor-pointer bg-transparent border-none p-2 z-0 pb-[max(0.5rem,env(safe-area-inset-bottom))]"
         onClick={() => {
           const next = document.querySelector('section:nth-of-type(2)');
           if (next) next.scrollIntoView({ behavior: 'smooth' });

@@ -12,7 +12,7 @@ export default function Footer() {
 
           <SweepLink
             href="mailto:dylantheriot.business@gmail.com"
-            className="text-xl md:text-2xl font-bold text-text"
+            className="text-base md:text-xl font-bold text-text"
           >
             dylantheriot.business@gmail.com
           </SweepLink>

@@ -1,5 +1,5 @@
 const about = {
-  location: 'San Francisco, CA',
+  location: 'San Francisco',
   interests: [
     { label: 'Tennis', emoji: '🎾' },
     { label: 'Music', emoji: '🎵' },

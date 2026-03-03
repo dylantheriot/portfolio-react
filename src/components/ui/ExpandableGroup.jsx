@@ -29,7 +29,7 @@ export default function ExpandableGroup({ title, count, children, defaultOpen = 
         className="w-full flex items-center justify-between py-5 px-1 text-left cursor-pointer group"
       >
         <div className="flex items-center gap-3">
-          <SweepLink as="h3" hovered={hovered} className="text-lg md:text-xl font-bold text-text">
+          <SweepLink as="h3" hovered={open || hovered} className="text-lg md:text-xl font-bold text-text">
             {title}
           </SweepLink>
           <span className="text-tertiary text-sm">({count})</span>
